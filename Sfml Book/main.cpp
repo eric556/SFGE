@@ -1,8 +1,15 @@
-#include <SFML/Graphics.hpp>
-#include <iostream> 
 
+#include <iostream> 
+#include "Game.h"
 int main()
 {
-
-  return 0;
+	Game game;
+	while (!game.GetWindow()->IsDone()){
+		game.HandleInput();
+		game.Update();
+		game.Render();
+		game.RestartClock();
+	}
+	return 0;
 }
+
