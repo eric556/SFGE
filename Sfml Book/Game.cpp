@@ -1,7 +1,7 @@
 #include "Game.h"
 
 
-Game::Game() : m_window("Page 31", sf::Vector2u(800,600))
+Game::Game() : m_window(" Page 31", sf::Vector2u(600,400))
 {
 	
 	m_mushroomTexture.loadFromFile("Mushroom.png");
