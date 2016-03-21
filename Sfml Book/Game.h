@@ -1,5 +1,8 @@
 #pragma once
 #include "Window.h"
+#include "World.h"
+
+enum States{Playing, Menu, Exiting};
 
 class Game{
 public:
@@ -19,9 +22,8 @@ private:
 
 	Window m_window;
 	sf::Clock m_clock;
-	sf::Time m_elapsed;
-
-	sf::Texture m_mushroomTexture;
-	sf::Sprite m_mushroom;
-	sf::Vector2i m_increment;
+	float m_elapsed;
+	World m_world;
+	Snake m_snake;
+	States m_state;
 };
