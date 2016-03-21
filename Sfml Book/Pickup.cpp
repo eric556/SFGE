@@ -73,6 +73,7 @@ void Pickup::Update(Snake& l_player, sf::Vector2u& l_windowSize, sf::RectangleSh
 				else {
 					bounds[i].setOrigin(bounds[i].getSize());
 					bounds[i].setPosition(sf::Vector2f(l_windowSize));
+
 				}
 			}
 			break;
@@ -135,6 +136,9 @@ void Pickup::UpdateType(PickupType l_type){
 	case PickupType::SpeedUp:
 		m_shape.setFillColor(sf::Color(158,65,207));
 
+		break;
+	case PickupType::Magnet:
+		m_shape.setFillColor(sf::Color(239, 215, 0));
 		break;
 	default:
 		break;

@@ -2,6 +2,8 @@
 #include "Window.h"
 #include "World.h"
 
+enum States{Playing, Menu, Exiting};
+
 class Game{
 public:
 	Game();
@@ -23,4 +25,5 @@ private:
 	float m_elapsed;
 	World m_world;
 	Snake m_snake;
+	States m_state;
 };
