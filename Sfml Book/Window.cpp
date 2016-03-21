@@ -50,8 +50,8 @@ void Window::ToggleFullscreen(){
 	Destroy();
 	Create();
 }
-
-void Window::BeginDraw(){ m_window.clear(sf::Color::Black); }
+ 
+void Window::BeginDraw(){ m_window.clear(sf::Color(105,105,105)); }
 void Window::EndDraw(){ m_window.display(); }
 
 sf::Vector2u Window::GetWindowSize(){ return m_windowSize; }

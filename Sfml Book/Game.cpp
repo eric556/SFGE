@@ -1,9 +1,9 @@
 #include "Game.h"
 
 
-Game::Game() : m_window("Snake", sf::Vector2u(800, 600)), m_snake(m_world.GetBlockSize()), m_world(sf::Vector2u(800,600))
+Game::Game() : m_window("Snake", sf::Vector2u(800, 600)), m_snake(m_world.GetBlockSize()), m_world(sf::Vector2u(800, 600)), m_menu(sf::Vector2u(800,600))
 {
-	m_state = States::Playing;
+	m_state = States::MainMenu;
 }
 
 
@@ -13,11 +13,11 @@ Game::~Game()
 
 void Game::Update(){
 	m_window.Update();
-
+	float timestep = 1.0f / m_snake.GetSpeed();
 	switch (m_state)
 	{
 	case States::Playing:
-		float timestep = 1.0f / m_snake.GetSpeed();
+		
 		if (m_elapsed >= timestep){
 			m_snake.Tick();
 			m_world.Update(m_snake);
@@ -27,7 +27,7 @@ void Game::Update(){
 			}
 		}
 		break;
-	case States::Menu:
+	case States::MainMenu:
 		break;
 	default:
 		break;
@@ -45,7 +45,8 @@ void Game::Render(){
 		m_world.Render(*m_window.GetRenderWindow());
 		m_snake.Render(*m_window.GetRenderWindow());
 		break;
-	case States::Menu:
+	case States::MainMenu:
+		m_menu.Render(*m_window.GetRenderWindow());
 		break;
 	default:
 		break;
@@ -76,7 +77,7 @@ void Game::HandleInput(){
 			m_snake.SetDirection(Direction::Right);
 		}
 		break;
-	case States::Menu:
+	case States::MainMenu:
 		break;
 	default:
 		break;
