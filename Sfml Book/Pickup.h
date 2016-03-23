@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-enum PickupType{SpeedUp,SlowDown,Extend,ShrinkArena,ExpandArena,Magnet};
+enum PickupType{SpeedUp,SlowDown,Extend,ShrinkArena,ExpandArena,Magnet,ExtraLife};
 
 class Pickup
 {

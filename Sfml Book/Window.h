@@ -15,8 +15,8 @@ public:
 	void EndDraw();// Display the changes
 
 	void Update();
-
 	bool IsDone();
+	void SetDone(bool done);
 	bool IsFullscreen();
 	sf::Vector2u GetWindowSize();
 	sf::RenderWindow* GetRenderWindow(){ return &m_window; }
@@ -35,6 +35,7 @@ private:
 	std::string m_windowTitle;
 	bool m_isDone;
 	bool m_isFullscreen;
+	
 
 };
 

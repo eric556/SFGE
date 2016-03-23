@@ -2,8 +2,11 @@
 #include "Window.h"
 #include "World.h"
 #include "Menu.h"
+#include "Leaderboard.h"
+#include "Instruction.h"
+#include "GUI.h"
 
-enum States{Playing, MainMenu, Exiting};
+enum States{Playing, Instructions,Leaderboards,Exiting, MainMenu};
 
 class Game{
 public:
@@ -28,4 +31,8 @@ private:
 	Menu m_menu;
 	Snake m_snake;
 	States m_state;
+	Instruction m_instructions;
+	Leaderboard m_leaderboard;
+	GUI m_gui;
+
 };

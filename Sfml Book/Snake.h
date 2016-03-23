@@ -31,6 +31,7 @@ public:
 	bool HasLost();
 	void IncreaseSpeed(){ m_speed += 2; }
 	void DecreaseSpeed(){ if (m_speed > 2){ m_speed -= 2; } }
+	void IncreaseLives();
 
 	void Lose();
 	void ToggleLost();

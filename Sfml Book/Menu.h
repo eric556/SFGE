@@ -8,11 +8,13 @@ public:
 	~Menu();
 
 	void Update();
-	void Render(sf::RenderWindow& l_window);
+	void Render(sf::RenderWindow& l_window); 
+	void HandleInput();
+	int menuIndex;
+	std::vector<sf::Text> menuOptions;
 private:
 	sf::Font m_font;
 	sf::Text m_title;
-	std::vector<sf::Text> m_menuOptions;
 	sf::Color m_textColor;
 
 

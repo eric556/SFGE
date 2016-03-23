@@ -15,6 +15,10 @@ Window::~Window()
 	Destroy();
 }
 
+void Window::SetDone(bool done){
+	m_isDone = true;
+}
+
 void Window::Setup(const std::string& l_title, const sf::Vector2u& l_size){
 	m_windowTitle = l_title;
 	m_windowSize = l_size;
@@ -50,7 +54,7 @@ void Window::ToggleFullscreen(){
 	Destroy();
 	Create();
 }
- 
+
 void Window::BeginDraw(){ m_window.clear(sf::Color(105,105,105)); }
 void Window::EndDraw(){ m_window.display(); }
 

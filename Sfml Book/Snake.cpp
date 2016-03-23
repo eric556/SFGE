@@ -38,6 +38,7 @@ int Snake::GetLives(){ return m_lives; }
 int Snake::GetScore(){ return m_score; }
 
 void Snake::IncreaseScore(){ m_score += 10; }
+void Snake::IncreaseLives(){ m_lives++; }
 bool Snake::HasLost(){ return m_lost; }
 void Snake::Lose(){ m_lost = true; UpdateLeaderBoards(); }
 void Snake::ToggleLost(){ m_lost = !m_lost; }
@@ -191,6 +192,3 @@ void Snake::UpdateLeaderBoards(){
 	leaderBoardsFileOut.close();
 }
 
-void Sort(std::vector<int> a){
-
-}

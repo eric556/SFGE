@@ -77,6 +77,9 @@ void Pickup::Update(Snake& l_player, sf::Vector2u& l_windowSize, sf::RectangleSh
 				}
 			}
 			break;
+		case PickupType::ExtraLife:
+			l_player.IncreaseLives();
+			break;
 		default:
 			break;
 		}
@@ -107,11 +110,14 @@ void Pickup::Respawn(sf::Vector2u l_windowSize){
 	else if(chance < 30 && chance > 10){
 		UpdateType(PickupType::SlowDown);
 	}
-	else if(chance < 10 && chance > 5){
+	else if(chance < 20 && chance > 10){
 		UpdateType(PickupType::ShrinkArena);
 	}
-	else{
+	else if (chance < 10 && chance > 3){
 		UpdateType(PickupType::ExpandArena);
+	}
+	else{
+		UpdateType(PickupType::ExtraLife);
 	}
 
 	m_shape.setPosition(position.x * m_shape.getRadius() * 2, position.y * m_shape.getRadius() * 2);
@@ -139,6 +145,9 @@ void Pickup::UpdateType(PickupType l_type){
 		break;
 	case PickupType::Magnet:
 		m_shape.setFillColor(sf::Color(239, 215, 0));
+		break;
+	case PickupType::ExtraLife:
+		m_shape.setFillColor(sf::Color(231, 236, 19));
 		break;
 	default:
 		break;
