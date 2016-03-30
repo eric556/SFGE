@@ -110,10 +110,10 @@ void Pickup::Respawn(sf::Vector2u l_windowSize){
 	else if(chance < 30 && chance > 10){
 		UpdateType(PickupType::SlowDown);
 	}
-	else if(chance < 20 && chance > 10){
+	else if(chance < 20 && chance > 5){
 		UpdateType(PickupType::ShrinkArena);
 	}
-	else if (chance < 10 && chance > 3){
+	else if (chance < 5 && chance > 3){
 		UpdateType(PickupType::ExpandArena);
 	}
 	else{
