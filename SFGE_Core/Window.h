@@ -35,7 +35,7 @@ private:
 	std::string m_windowTitle;
 	bool m_isDone;
 	bool m_isFullscreen;
-	
+
 
 };
 

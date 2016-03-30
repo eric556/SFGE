@@ -1,7 +1,7 @@
 #include "World.h"
 
 
-World::World(sf::Vector2u l_windSize) : m_pickup(PickupType::Extend,sf::Vector2i(4,4),8)
+World::World(sf::Vector2u l_windSize) : m_pickup(PickupType::Extend, sf::Vector2i(4, 4), 8)
 {
 	m_blockSize = 16;
 	m_windowSize = l_windSize;

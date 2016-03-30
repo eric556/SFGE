@@ -43,7 +43,7 @@ void Window::Update(){
 		if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)){
 			m_isDone = true;
 		}
-		else if ((event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::F5) ){
+		else if ((event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::F5)){
 			ToggleFullscreen();
 		}
 	}
@@ -55,7 +55,7 @@ void Window::ToggleFullscreen(){
 	Create();
 }
 
-void Window::BeginDraw(){ m_window.clear(sf::Color(105,105,105)); }
+void Window::BeginDraw(){ m_window.clear(sf::Color(105, 105, 105)); }
 void Window::EndDraw(){ m_window.display(); }
 
 sf::Vector2u Window::GetWindowSize(){ return m_windowSize; }
