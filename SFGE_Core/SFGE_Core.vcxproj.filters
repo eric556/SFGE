@@ -13,11 +13,17 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Window">
-      <UniqueIdentifier>{0f1a4447-41af-493f-99c9-756bde3c320b}</UniqueIdentifier>
+    <Filter Include="Source Files\Core_Required">
+      <UniqueIdentifier>{6df4e19e-a1b4-4852-b763-11c1a09a6769}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Game">
+    <Filter Include="Source Files\Core_Required\Event Manager">
+      <UniqueIdentifier>{cb791257-2dd1-43df-9f65-f4bfcfa3f627}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core_Required\Game">
       <UniqueIdentifier>{e5d804db-4ad6-402a-8a9b-13cbb707bcbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core_Required\Window">
+      <UniqueIdentifier>{0f1a4447-41af-493f-99c9-756bde3c320b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -25,21 +31,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Window.cpp">
-      <Filter>Source Files\Window</Filter>
+      <Filter>Source Files\Core_Required\Window</Filter>
     </ClCompile>
     <ClCompile Include="TestGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EventManager.cpp">
+      <Filter>Source Files\Core_Required\Event Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
-      <Filter>Source Files\Window</Filter>
+      <Filter>Source Files\Core_Required\Window</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>Source Files\Game</Filter>
+      <Filter>Source Files\Core_Required\Game</Filter>
     </ClInclude>
     <ClInclude Include="TestGame.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EventManager.h">
+      <Filter>Source Files\Core_Required\Event Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
