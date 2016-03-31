@@ -4,12 +4,11 @@
 
 class Game{
 public:
-	Game();
-	~Game();
+	
 
-	virtual void HandleInput();
-	virtual void Render();
-	virtual void Update();
+	virtual void HandleInput() = 0;
+	virtual void Render() = 0;
+	virtual void Update() = 0;
 
 	Window* GetWindow(){
 		return &m_window;
