@@ -4,6 +4,10 @@
 #include <string>
 #include <unordered_map>
 #include <functional>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+
 
 namespace SFGE{
 	enum class EventType{
@@ -74,7 +78,7 @@ namespace SFGE{
 		~EventManager();
 
 		bool AddBinding(Binding *l_binding);
-		bool RemoveBdingind(std::string l_name);
+		bool RemoveBinding(std::string l_name);
 		void SetFocus(const bool& l_focus);
 
 		template<class T>
