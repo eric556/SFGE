@@ -24,6 +24,11 @@ namespace SFGE{
 		m_windowSize = l_size;
 		m_isFullscreen = false;
 		m_isDone = false;
+		m_isFocused = true;
+		m_eventManager.AddCallback("Fullscreen_toggle", &Window::ToggleFullscreen, this);
+		m_eventManager.AddCallback("Window_close", &Window::Close, this);
+		m_eventManager.AddCallback("Window_close_alt", &Window::Close, this);
+
 		Create();
 	}
 
@@ -40,16 +45,19 @@ namespace SFGE{
 	void Window::Update(){
 		sf::Event event;
 		while (m_window.pollEvent(event)){
-			if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)){
-				m_isDone = true;
+			if (event.type == sf::Event::LostFocus){
+				m_isFocused = false;
+				m_eventManager.SetFocus(false);
+			}else if (event.type == sf::Event::GainedFocus){
+				m_isFocused = true;
+				m_eventManager.SetFocus(true);
 			}
-			else if ((event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::F5)){
-				ToggleFullscreen();
-			}
+			m_eventManager.HandleEvent(event);
 		}
+		m_eventManager.Update();
 	}
 
-	void Window::ToggleFullscreen(){
+	void Window::ToggleFullscreen(EventDetails* l_details){
 		m_isFullscreen = !m_isFullscreen;
 		Destroy();
 		Create();
@@ -67,4 +75,16 @@ namespace SFGE{
 	bool Window::IsDone(){
 		return m_isDone;
 	}
+
+	bool Window::IsFullscreen(){
+		return m_isFullscreen;
+	}
+
+	bool Window::IsFocused(){
+		return m_isFocused;
+	}
+
+	void Window::Close(EventDetails* l_details){ m_isDone = true; }
+
+	
 }

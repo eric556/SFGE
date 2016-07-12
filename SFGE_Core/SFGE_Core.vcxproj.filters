@@ -54,4 +54,9 @@
       <Filter>Source Files\Core_Required\Event Manager</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="keys.cfg">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>

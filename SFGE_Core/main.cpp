@@ -1,6 +1,7 @@
 
 #include <iostream> 
 #include "TestGame.h"
+#include <SFML\Graphics.hpp>
 int main()
 {
 	TestGame game("Test",sf::Vector2u(800,600));
