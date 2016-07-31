@@ -22,7 +22,9 @@ namespace SFGE{
 		MouseLeft = sf::Event::MouseLeft,
 		Closed = sf::Event::Closed,
 		TextEntered = sf::Event::TextEntered,
-		Keyboard = sf::Event::Count + 1, Mouse, Joystick
+		Keyboard = sf::Event::Count + 1, 
+		Mouse, 
+		Joystick
 	};
 
 	struct EventInfo{
@@ -74,12 +76,12 @@ namespace SFGE{
 	
 	class EventManager{
 	public:
-		EventManager();
+		EventManager(std::string l_filepath);
 		~EventManager();
 
 		bool AddBinding(Binding *l_binding);
 		bool RemoveBinding(std::string l_name);
-		void SetFocus(const bool& l_focus);
+		void SetFocus(const bool& l_focus){ m_hasFocus = l_focus; }
 
 		template<class T>
 		bool AddCallback(const std::string& l_name, void(T::*l_func)(EventDetails*), T* l_instance){
@@ -91,7 +93,7 @@ namespace SFGE{
 			m_callbacks.erase(l_name);
 		}
 
-		void HandlesEven(sf::Event& l_event);
+		void HandleEvent(sf::Event& l_event);
 		void Update();
 
 		sf::Vector2i GetMousePos(sf::RenderWindow* l_wind = nullptr){
@@ -100,6 +102,7 @@ namespace SFGE{
 
 	private:
 		void LoadBindings();
+		std::string m_bindingsFilepath;
 
 		Bindings m_bindings;
 		Callbacks m_callbacks;

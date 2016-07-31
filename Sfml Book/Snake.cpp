@@ -40,7 +40,15 @@ int Snake::GetScore(){ return m_score; }
 void Snake::IncreaseScore(){ m_score += 10; }
 void Snake::IncreaseLives(){ m_lives++; }
 bool Snake::HasLost(){ return m_lost; }
-void Snake::Lose(){ m_lost = true; UpdateLeaderBoards(); }
+void Snake::Lose(){ 
+	if (this->m_lives > 0){
+		m_lives--;
+		this->Reset();
+	}
+	else{
+		m_lost = true; UpdateLeaderBoards();
+	}
+}
 void Snake::ToggleLost(){ m_lost = !m_lost; }
 
 void Snake::Extend(){

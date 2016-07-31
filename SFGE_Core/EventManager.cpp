@@ -1,7 +1,7 @@
 #include "EventManager.h"
 
 namespace SFGE{
-	EventManager::EventManager() :m_hasFocus(true){ LoadBindings(); }
+	EventManager::EventManager(std::string l_filepath) :m_hasFocus(true), m_bindingsFilepath(l_filepath){ LoadBindings(); }
 	EventManager::~EventManager(){
 		for (auto &itr : m_bindings){
 			delete itr.second;
@@ -27,7 +27,7 @@ namespace SFGE{
 		return true;
 	}
 
-	void EventManager::HandlesEven(sf::Event& l_event){
+	void EventManager::HandleEvent(sf::Event& l_event){
 		for (auto &b_itr : m_bindings){
 			Binding* bind = b_itr.second;
 			for (auto &e_itr : bind->m_events){
@@ -113,7 +113,7 @@ namespace SFGE{
 		std::string delimiter = ":";
 
 		std::ifstream bindings;
-		bindings.open("keys.cfg");
+		bindings.open(m_bindingsFilepath);
 		if (!bindings.is_open()){
 			std::cout << "! Failed loading keys.cfg.\n";
 			return;
@@ -140,7 +140,10 @@ namespace SFGE{
 				eventInfo.m_code = code;
 				bind->BindEvent(type, eventInfo);
 			}
+			if (!AddBinding(bind)){ delete bind; }
+			bind = nullptr;
 		}
+		bindings.close();
 	}
 
 }

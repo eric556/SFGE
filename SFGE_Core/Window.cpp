@@ -1,12 +1,12 @@
 #include "Window.h"
 
 namespace SFGE{
-	Window::Window()
+	Window::Window(std::string l_bindingsFilepath) : m_eventManager(l_bindingsFilepath)
 	{
 		Setup("Window", sf::Vector2u(640, 480));
 	}
 
-	Window::Window(const std::string& l_title, const sf::Vector2u& l_size){
+	Window::Window(const std::string& l_title, const sf::Vector2u& l_size, std::string l_bindingsFilepath) : m_eventManager(l_bindingsFilepath){
 		Setup(l_title, l_size);
 	}
 
@@ -24,6 +24,12 @@ namespace SFGE{
 		m_windowSize = l_size;
 		m_isFullscreen = false;
 		m_isDone = false;
+		m_isFocused = true;
+		m_clearColor = sf::Color(105, 105, 105);
+		m_eventManager.AddCallback("Fullscreen_toggle", &Window::ToggleFullscreen, this);
+		m_eventManager.AddCallback("Window_close", &Window::Close, this);
+		m_eventManager.AddCallback("Window_close_alt", &Window::Close, this);
+
 		Create();
 	}
 
@@ -40,22 +46,25 @@ namespace SFGE{
 	void Window::Update(){
 		sf::Event event;
 		while (m_window.pollEvent(event)){
-			if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)){
-				m_isDone = true;
+			if (event.type == sf::Event::LostFocus){
+				m_isFocused = false;
+				m_eventManager.SetFocus(false);
+			}else if (event.type == sf::Event::GainedFocus){
+				m_isFocused = true;
+				m_eventManager.SetFocus(true);
 			}
-			else if ((event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::F5)){
-				ToggleFullscreen();
-			}
+			m_eventManager.HandleEvent(event);
 		}
+		m_eventManager.Update();
 	}
 
-	void Window::ToggleFullscreen(){
+	void Window::ToggleFullscreen(EventDetails* l_details){
 		m_isFullscreen = !m_isFullscreen;
 		Destroy();
 		Create();
 	}
 
-	void Window::BeginDraw(){ m_window.clear(sf::Color(105, 105, 105)); }
+	void Window::BeginDraw(){ m_window.clear(m_clearColor); }
 	void Window::EndDraw(){ m_window.display(); }
 
 	sf::Vector2u Window::GetWindowSize(){ return m_windowSize; }
@@ -64,7 +73,23 @@ namespace SFGE{
 		m_window.draw(l_drawble);
 	}
 
+	void Window::Draw(sf::Drawable& l_drawble, sf::Shader& l_shader){
+		m_window.draw(l_drawble, &l_shader);
+	}
+
 	bool Window::IsDone(){
 		return m_isDone;
 	}
+
+	bool Window::IsFullscreen(){
+		return m_isFullscreen;
+	}
+
+	bool Window::IsFocused(){
+		return m_isFocused;
+	}
+
+	void Window::Close(EventDetails* l_details){ m_isDone = true; }
+
+	
 }

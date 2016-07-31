@@ -25,6 +25,12 @@
     <Filter Include="Source Files\Core_Required\Window">
       <UniqueIdentifier>{0f1a4447-41af-493f-99c9-756bde3c320b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Core_Required\State Machine">
+      <UniqueIdentifier>{61f5dd6a-9755-4b8e-b6ed-2ac95ffb43de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entities">
+      <UniqueIdentifier>{690f2580-cd7a-4f14-bd92-e71c4259153b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -38,6 +44,18 @@
     </ClCompile>
     <ClCompile Include="EventManager.cpp">
       <Filter>Source Files\Core_Required\Event Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="StateManager.cpp">
+      <Filter>Source Files\Core_Required\State Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="DinoGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cactus.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Dino.cpp">
+      <Filter>Source Files\Entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -53,5 +71,28 @@
     <ClInclude Include="EventManager.h">
       <Filter>Source Files\Core_Required\Event Manager</Filter>
     </ClInclude>
+    <ClInclude Include="BaseState.h">
+      <Filter>Source Files\Core_Required\State Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="StateManager.h">
+      <Filter>Source Files\Core_Required\State Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="DinoGame.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dino.h">
+      <Filter>Source Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Cactus.h">
+      <Filter>Source Files\Entities</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="keys.cfg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="DinoGame\keys.cfg">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
