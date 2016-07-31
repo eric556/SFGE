@@ -18,6 +18,7 @@ void Dino::Draw(SFGE::Window& l_window){
 	r.setFillColor(sf::Color::Transparent);
 	r.setOutlineThickness(1);
 	r.setOutlineColor(sf::Color::Red);
+	//l_window.Draw(r);
 }
 
 void Dino::Update(float dt, std::vector<Cactus>l_cacti){
