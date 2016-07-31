@@ -1,12 +1,12 @@
 #include "Window.h"
 
 namespace SFGE{
-	Window::Window()
+	Window::Window(std::string l_bindingsFilepath) : m_eventManager(l_bindingsFilepath)
 	{
 		Setup("Window", sf::Vector2u(640, 480));
 	}
 
-	Window::Window(const std::string& l_title, const sf::Vector2u& l_size){
+	Window::Window(const std::string& l_title, const sf::Vector2u& l_size, std::string l_bindingsFilepath) : m_eventManager(l_bindingsFilepath){
 		Setup(l_title, l_size);
 	}
 
@@ -25,6 +25,7 @@ namespace SFGE{
 		m_isFullscreen = false;
 		m_isDone = false;
 		m_isFocused = true;
+		m_clearColor = sf::Color(105, 105, 105);
 		m_eventManager.AddCallback("Fullscreen_toggle", &Window::ToggleFullscreen, this);
 		m_eventManager.AddCallback("Window_close", &Window::Close, this);
 		m_eventManager.AddCallback("Window_close_alt", &Window::Close, this);
@@ -63,13 +64,17 @@ namespace SFGE{
 		Create();
 	}
 
-	void Window::BeginDraw(){ m_window.clear(sf::Color(105, 105, 105)); }
+	void Window::BeginDraw(){ m_window.clear(m_clearColor); }
 	void Window::EndDraw(){ m_window.display(); }
 
 	sf::Vector2u Window::GetWindowSize(){ return m_windowSize; }
 
 	void Window::Draw(sf::Drawable& l_drawble){
 		m_window.draw(l_drawble);
+	}
+
+	void Window::Draw(sf::Drawable& l_drawble, sf::Shader& l_shader){
+		m_window.draw(l_drawble, &l_shader);
 	}
 
 	bool Window::IsDone(){

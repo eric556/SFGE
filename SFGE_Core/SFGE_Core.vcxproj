@@ -72,18 +72,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cactus.cpp" />
+    <ClCompile Include="DinoGame.cpp" />
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Dino.cpp" />
+    <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="TestGame.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseState.h" />
+    <ClInclude Include="Cactus.h" />
+    <ClInclude Include="Dino.h" />
+    <ClInclude Include="DinoGame.h" />
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="StateManager.h" />
     <ClInclude Include="TestGame.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DinoGame\keys.cfg" />
     <None Include="keys.cfg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -22,7 +22,9 @@ namespace SFGE{
 		MouseLeft = sf::Event::MouseLeft,
 		Closed = sf::Event::Closed,
 		TextEntered = sf::Event::TextEntered,
-		Keyboard = sf::Event::Count + 1, Mouse, Joystick
+		Keyboard = sf::Event::Count + 1, 
+		Mouse, 
+		Joystick
 	};
 
 	struct EventInfo{
@@ -74,7 +76,7 @@ namespace SFGE{
 	
 	class EventManager{
 	public:
-		EventManager();
+		EventManager(std::string l_filepath);
 		~EventManager();
 
 		bool AddBinding(Binding *l_binding);
@@ -100,6 +102,7 @@ namespace SFGE{
 
 	private:
 		void LoadBindings();
+		std::string m_bindingsFilepath;
 
 		Bindings m_bindings;
 		Callbacks m_callbacks;

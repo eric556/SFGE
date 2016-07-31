@@ -8,8 +8,8 @@ namespace SFGE{
 	class Window
 	{
 	public:
-		Window();
-		Window(const std::string& l_title, const sf::Vector2u& l_size);
+		Window(std::string l_bindingsFilepath);
+		Window(const std::string& l_title, const sf::Vector2u& l_size, std::string l_bindingsFilepath);
 		~Window();
 
 		void BeginDraw();//Clear the window
@@ -22,12 +22,15 @@ namespace SFGE{
 		void SetDone(bool done);
 		sf::Vector2u GetWindowSize();
 		sf::RenderWindow* GetRenderWindow(){ return &m_window; }
+		void SetClearColor(sf::Color l_c){ m_clearColor = l_c; }
+		sf::Color GetClearColor(){ return m_clearColor; }
 
 		EventManager* GetEventManager() { return &m_eventManager; }
 		void ToggleFullscreen(EventDetails* l_details);
 		void Close(EventDetails* l_details = nullptr);
 
 		void Draw(sf::Drawable& l_drawable);
+		void Draw(sf::Drawable& l_drawable, sf::Shader& l_shader);
 
 
 	private:
@@ -41,6 +44,7 @@ namespace SFGE{
 		bool m_isDone;
 		bool m_isFullscreen;
 		bool m_isFocused;
+		sf::Color m_clearColor;
 
 		EventManager m_eventManager;
 

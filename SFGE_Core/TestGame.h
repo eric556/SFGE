@@ -8,12 +8,24 @@ public:
 	~TestGame();
 	void Update();
 	void Render();
-	void HandleInput();
-	void MoveRight(SFGE::EventDetails* l_details);
-	void MoveLeft(SFGE::EventDetails* l_details);
+	void Run();
+	SFGE::Window* GetWindow(){
+		return &m_window;
+	}
 
 private:
-	sf::RectangleShape rect;
-	sf::Texture m_texture;
-	sf::Sprite m_sprite;
+	std::vector<sf::CircleShape> trail;
+	int c;
+	int r, g, b, redUp, blueUp, greenUp;
+	void ballUpdate();
+	void rightPaddleUpdate();
+	void leftPaddleUpdate();
+	sf::Vector2f vel;
+	SFGE::Window m_window;
+	void RightPaddleMove(SFGE::EventDetails* l_details);
+	void LeftPaddleMove(SFGE::EventDetails* l_details);
+	void Debug(SFGE::EventDetails* l_details);
+	sf::RectangleShape leftPaddle;
+	sf::RectangleShape rightPaddle;
+	sf::CircleShape ball;
 };
