@@ -83,7 +83,7 @@ void DinoGame::Update(){
 		TimeUpdate();
 		score += .2f;
 		speed += .08f;
-		cactusSpawnTime -= 0.008f;
+		cactusSpawnTime -= 0.01f;
 		scoreText.setString(std::to_string((int)score));
 		scoreText.setPosition(512 - scoreText.getGlobalBounds().width, 50);
 		std::cout << speed << "\n";
@@ -118,6 +118,12 @@ void DinoGame::Render(){
 	m_window.Draw(ground2);
 	for (int i = 0; i < cactus.size(); i++){
 		cactus[i].Draw(m_window);
+		sf::RectangleShape r(sf::Vector2f(cactus[i].body.getGlobalBounds().width - 20, cactus[i].body.getGlobalBounds().height - 10));
+		r.setPosition(cactus[i].body.getPosition().x + 10, cactus[i].body.getPosition().y + 10);
+		r.setFillColor(sf::Color::Transparent);
+		r.setOutlineThickness(1);
+		r.setOutlineColor(sf::Color::Red);
+		//m_window.Draw(r);
 	}
 	dino.Draw(m_window);
 	m_window.Draw(scoreText);

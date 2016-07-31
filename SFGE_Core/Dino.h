@@ -3,6 +3,8 @@
 #include <SFML\Graphics.hpp>
 #include "Cactus.h"
 
+enum AnimState { RUNNING, JUMPING, DUCKING };
+
 class Dino{
 public:
 	Dino(SFGE::Window& l_window);
@@ -15,10 +17,12 @@ public:
 	int currentFrame;
 	bool dead;
 	sf::Clock deathClock;
+	AnimState animState;
 private:
 	bool jumping;
 	bool grounded;
 	void Jump(SFGE::EventDetails* details);
+	void Duck(SFGE::EventDetails* details);
 	sf::Clock jumpClock;
 	sf::Vector2f vel;
 	float gravity;
