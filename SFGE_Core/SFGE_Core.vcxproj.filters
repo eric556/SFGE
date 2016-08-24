@@ -28,8 +28,26 @@
     <Filter Include="Source Files\Core_Required\State Machine">
       <UniqueIdentifier>{61f5dd6a-9755-4b8e-b6ed-2ac95ffb43de}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Entities">
+    <Filter Include="Games">
+      <UniqueIdentifier>{8796ae39-1738-43a3-bd37-b707373e28c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\DinoRun">
+      <UniqueIdentifier>{a45c40eb-2a22-44b5-b2ae-82410bce5ee2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\DinoRun\Entities">
       <UniqueIdentifier>{690f2580-cd7a-4f14-bd92-e71c4259153b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\DinoRun\Entities\Bird">
+      <UniqueIdentifier>{2f3344b9-37cc-4ebb-9463-b393546c4cb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\DinoRun\Entities\Cactus">
+      <UniqueIdentifier>{deb79bb2-6ac9-4246-97be-49fbdb2e95a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\DinoRun\Entities\Dino">
+      <UniqueIdentifier>{97c23b26-f5c9-4e89-b6d4-a534cce6fa60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Pong">
+      <UniqueIdentifier>{6fccfad4-c72a-4674-acd9-ec461515737b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -39,23 +57,26 @@
     <ClCompile Include="Window.cpp">
       <Filter>Source Files\Core_Required\Window</Filter>
     </ClCompile>
-    <ClCompile Include="TestGame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="EventManager.cpp">
       <Filter>Source Files\Core_Required\Event Manager</Filter>
     </ClCompile>
     <ClCompile Include="StateManager.cpp">
       <Filter>Source Files\Core_Required\State Machine</Filter>
     </ClCompile>
-    <ClCompile Include="DinoGame.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Bird.cpp">
+      <Filter>Games\DinoRun\Entities\Bird</Filter>
     </ClCompile>
     <ClCompile Include="Cactus.cpp">
-      <Filter>Source Files\Entities</Filter>
+      <Filter>Games\DinoRun\Entities\Cactus</Filter>
     </ClCompile>
     <ClCompile Include="Dino.cpp">
-      <Filter>Source Files\Entities</Filter>
+      <Filter>Games\DinoRun\Entities\Dino</Filter>
+    </ClCompile>
+    <ClCompile Include="DinoGame.cpp">
+      <Filter>Games\DinoRun</Filter>
+    </ClCompile>
+    <ClCompile Include="TestGame.cpp">
+      <Filter>Games\Pong</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -64,9 +85,6 @@
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Source Files\Core_Required\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="TestGame.h">
-      <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="EventManager.h">
       <Filter>Source Files\Core_Required\Event Manager</Filter>
@@ -77,14 +95,20 @@
     <ClInclude Include="StateManager.h">
       <Filter>Source Files\Core_Required\State Machine</Filter>
     </ClInclude>
-    <ClInclude Include="DinoGame.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Dino.h">
-      <Filter>Source Files\Entities</Filter>
+    <ClInclude Include="Bird.h">
+      <Filter>Games\DinoRun\Entities\Bird</Filter>
     </ClInclude>
     <ClInclude Include="Cactus.h">
-      <Filter>Source Files\Entities</Filter>
+      <Filter>Games\DinoRun\Entities\Cactus</Filter>
+    </ClInclude>
+    <ClInclude Include="Dino.h">
+      <Filter>Games\DinoRun\Entities\Dino</Filter>
+    </ClInclude>
+    <ClInclude Include="DinoGame.h">
+      <Filter>Games\DinoRun</Filter>
+    </ClInclude>
+    <ClInclude Include="TestGame.h">
+      <Filter>Games\Pong</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

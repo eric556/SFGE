@@ -1,9 +1,9 @@
 #pragma once
 #include "Game.h"
 #include "EventManager.h"
-
 #include "Dino.h"
 #include <vector>
+
 class DinoGame : public SFGE::Game
 {
 public:
@@ -47,11 +47,18 @@ private:
 	sf::Text gameOverText;
 	float score;
 	bool keepPlaying;
+	sf::Texture birdTexture;
+	sf::Texture birdTextureInverse;
+	std::vector<Bird> birds;
+	sf::Clock spawnClock;
+	float spawnTime;
 
 	void GroundUpdate();
 	void CloudUpdate();
 	void CactusUpdate();
 	void TimeUpdate();
+	void BirdUpdate();
+	void Spawner();
 	void InvertTime();
 	void InvertTextures();
 	void Retry(SFGE::EventDetails* l_details);
