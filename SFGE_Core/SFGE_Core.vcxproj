@@ -79,8 +79,12 @@
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Dino.cpp" />
+    <ClCompile Include="Polygon.cpp" />
+    <ClCompile Include="PTestGame.cpp" />
+    <ClCompile Include="RigidBody.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="TestGame.cpp" />
+    <ClCompile Include="VectorMath.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -91,8 +95,12 @@
     <ClInclude Include="DinoGame.h" />
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Polygon.h" />
+    <ClInclude Include="PTestGame.h" />
+    <ClInclude Include="RigidBody.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="TestGame.h" />
+    <ClInclude Include="VectorMath.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>

@@ -49,6 +49,18 @@
     <Filter Include="Games\Pong">
       <UniqueIdentifier>{6fccfad4-c72a-4674-acd9-ec461515737b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Games\Physics Test">
+      <UniqueIdentifier>{f8d6feef-724a-4bc4-9b19-0d7b6ea5e28f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Physics Test\Entities">
+      <UniqueIdentifier>{fd980d4e-852b-4224-ad15-ff1139f4b722}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Physics Test\Physics">
+      <UniqueIdentifier>{79ce9a81-29de-45bf-9bdd-0b8b5a38fa9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core_Required\Math">
+      <UniqueIdentifier>{935d1bab-16e8-45d8-bd52-0f6211d2f4d1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -77,6 +89,18 @@
     </ClCompile>
     <ClCompile Include="TestGame.cpp">
       <Filter>Games\Pong</Filter>
+    </ClCompile>
+    <ClCompile Include="PTestGame.cpp">
+      <Filter>Games\Physics Test</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidBody.cpp">
+      <Filter>Games\Physics Test\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorMath.cpp">
+      <Filter>Source Files\Core_Required\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Polygon.cpp">
+      <Filter>Games\Physics Test\Physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +133,18 @@
     </ClInclude>
     <ClInclude Include="TestGame.h">
       <Filter>Games\Pong</Filter>
+    </ClInclude>
+    <ClInclude Include="PTestGame.h">
+      <Filter>Games\Physics Test</Filter>
+    </ClInclude>
+    <ClInclude Include="RigidBody.h">
+      <Filter>Games\Physics Test\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorMath.h">
+      <Filter>Source Files\Core_Required\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Polygon.h">
+      <Filter>Games\Physics Test\Physics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

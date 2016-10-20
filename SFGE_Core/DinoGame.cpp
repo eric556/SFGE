@@ -4,7 +4,7 @@
 DinoGame::DinoGame(std::string l_title, sf::Vector2u windowSize) : m_window(l_title, windowSize, "DinoGame/keys.cfg"), dino(m_window)
 {
 	m_window.SetClearColor(sf::Color(247,247,247));
-	//m_window.SetClearColor(sf::Color::Black);
+
 	if (!groundTexture.loadFromFile("DinoGame/Assets/ground.png")){
 		std::cout << "ground texture error\n";
 	}
@@ -90,10 +90,8 @@ void DinoGame::Update(){
 		TimeUpdate();
 		score += .2f;
 		speed += .08f;
-		//cactusSpawnTime -= 0.015f;
 		scoreText.setString(std::to_string((int)score));
 		scoreText.setPosition(512 - scoreText.getGlobalBounds().width, 50);
-		//std::cout << speed << "\n";
 	}
 	else{
 		if (dino.deathClock.getElapsedTime().asSeconds() > 2 && keepPlaying == true){
@@ -171,13 +169,11 @@ void DinoGame::GroundUpdate(){
 void DinoGame::CloudUpdate(){
 	//spawn the clouds with a timer
 	if (cloudSpawnClock.getElapsedTime().asSeconds() > cloudSpawnTime){
-		//std::cout << "spawn cloud\n";
 		sf::Sprite c;
 		c.setTexture(cloudTexture);
 		c.setPosition(sf::Vector2f(512, 100 + (rand() % (int)(150 - 100 + 1))));
 		clouds.push_back(c);
 		cloudSpawnTime = 5 + (rand() % (int)(10 - 5 + 1));
-		//std::cout << cloudSpawnTime << "\n";
 		cloudSpawnClock.restart();
 	}
 
@@ -365,9 +361,7 @@ void DinoGame::BirdUpdate(){
 void DinoGame::Spawner(){
 	if (spawnClock.getElapsedTime().asSeconds() > spawnTime){
 		int randomEntity = rand() % 100;
-		std::cout << randomEntity << "\n";
 		if (randomEntity  >= 40){
-			//std::cout << "spawn cactus\n";
 			int randomTextureIndex = rand() % 3;
 			Cactus c(cactusTextures[randomTextureIndex], randomTextureIndex);
 			cactus.push_back(c);
