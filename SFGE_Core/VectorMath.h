@@ -1,3 +1,4 @@
+#pragma once
 #include <SFML\System\Vector2.hpp>
 #include <string>
 namespace SFGE{
@@ -29,13 +30,16 @@ namespace SFGE{
 				Vector2f operator/(float) const;
 				Vector2f& operator%=(float);
 				Vector2f operator%(float) const;
+				Vector2f& operator=(const Vector2f);
 				bool operator==(const Vector2f);
 				bool operator!=(const Vector2f);
 				float dot(const Vector2f);
 				Vector2f normalize();
 				Vector2f& truncate(float);
+				Vector2f unitVector();
 				float angle();
 				float magnitude();
+				float magnitudeSqrt();
 				const std::string to_str();
 				const sf::Vector2f sf() { return sf::Vector2f(this->x, this->y); }
 			};

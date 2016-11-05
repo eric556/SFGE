@@ -1,6 +1,6 @@
 #pragma once
-#include "Game.h"
-#include "EventManager.h"
+#include <Game.h>
+#include <EventManager.h>
 #include "Dino.h"
 #include <vector>
 

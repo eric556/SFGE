@@ -15,7 +15,7 @@ Dino::Dino(SFGE::Window& l_window){
 
 void Dino::Draw(SFGE::Window& l_window){
 	l_window.Draw(body);
-	sf::RectangleShape r(sf::Vector2f(boundingBox.width,boundingBox.height));
+	sf::RectangleShape r(sf::Vector2f(boundingBox.width, boundingBox.height));
 	r.setPosition(body.getPosition().x, body.getPosition().y + (boundingBox.top - body.getGlobalBounds().top));
 	r.setFillColor(sf::Color::Transparent);
 	r.setOutlineThickness(1);
@@ -24,7 +24,7 @@ void Dino::Draw(SFGE::Window& l_window){
 }
 
 void Dino::Update(float dt, std::vector<Cactus>l_cacti, std::vector<Bird> l_birds){
-	
+
 	if (dead == true){
 		vel.x = 0;
 		vel.y = 0;
@@ -45,7 +45,7 @@ void Dino::Update(float dt, std::vector<Cactus>l_cacti, std::vector<Bird> l_bird
 			body.setTextureRect(sf::IntRect(44 * currentFrame, 0, 44, 54));
 			animClock.restart();
 		}
-		
+
 		boundingBox = sf::FloatRect(b.left, b.top + 4, b.width - 2, b.height - 12);
 		break;
 	case AnimState::JUMPING:
@@ -60,7 +60,7 @@ void Dino::Update(float dt, std::vector<Cactus>l_cacti, std::vector<Bird> l_bird
 			else{
 				currentFrame++;
 			}
-			body.setTextureRect(sf::IntRect((59 * currentFrame)+132, 0, 59, 54));
+			body.setTextureRect(sf::IntRect((59 * currentFrame) + 132, 0, 59, 54));
 			animClock.restart();
 		}
 		boundingBox = sf::FloatRect(b.left, b.top + 20, b.width - 2, b.height - 25);
@@ -81,7 +81,7 @@ void Dino::Update(float dt, std::vector<Cactus>l_cacti, std::vector<Bird> l_bird
 
 	for (Cactus cactus : l_cacti){
 		sf::FloatRect bb = cactus.body.getGlobalBounds();
-		if (boundingBox.intersects(sf::FloatRect(bb.left + 10,bb.top + 10,bb.width-20,bb.height-10))){
+		if (boundingBox.intersects(sf::FloatRect(bb.left + 10, bb.top + 10, bb.width - 20, bb.height - 10))){
 			dead = true;
 			deathClock.restart();
 		}
@@ -102,7 +102,7 @@ void Dino::SetTexture(sf::Texture& l_texture){
 	body.setTextureRect(sf::IntRect(0, 0, 44, 54));
 	animClock.restart();
 	currentFrame = 0;
-} 
+}
 
 void Dino::Jump(SFGE::EventDetails* details){
 	if (body.getPosition().y >= 164){
@@ -113,5 +113,5 @@ void Dino::Jump(SFGE::EventDetails* details){
 void Dino::Duck(SFGE::EventDetails* details){
 	gravity = 100.0f;
 	animState = AnimState::DUCKING;
-	
+
 }

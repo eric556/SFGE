@@ -53,6 +53,12 @@ namespace SFGE{
 
 				return Vector2f(px, py);
 			}
+			Vector2f& Vector2f::operator=(const Vector2f other){
+				this->x = other.x;
+				this->y = other.y;
+				return *this;
+			}
+
 			bool Vector2f::operator==(const Vector2f other){
 				return this->x == other.x && this->y == other.y;
 			}
@@ -72,11 +78,21 @@ namespace SFGE{
 				}
 				return *this;
 			}
+			Vector2f Vector2f::unitVector(){
+				float magnitude = this->magnitude();
+				this->x = this->x / magnitude;
+				this->y = this->y / magnitude;
+				return *this;
+			}
 			float Vector2f::angle(){
 				return std::atan2(this->x, this->y);
 			}
 			float Vector2f::magnitude(){
 				return std::sqrt(std::pow(this->x, 2) + std::pow(this->y, 2));
+			}
+
+			float Vector2f::magnitudeSqrt(){
+				return std::pow(this->x, 2) + std::pow(this->y, 2);
 			}
 			const std::string Vector2f::to_str(){
 				std::string finalString = "" + std::to_string(this->x) + ", " + std::to_string(this->y);

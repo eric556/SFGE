@@ -1,5 +1,5 @@
 #include <SFML\Graphics.hpp>
-#include "Window.h"
+#include <Window.h>
 
 class Bird{
 public:

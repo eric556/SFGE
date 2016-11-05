@@ -31,13 +31,13 @@ void Bird::Update(float dt){
 		body.setTextureRect(sf::IntRect(46 * currentFrame, 0, 46, 42));
 		animClock.restart();
 	}
-	boundingBox = sf::FloatRect(body.getGlobalBounds().left, body.getGlobalBounds().top+10, body.getGlobalBounds().width, body.getGlobalBounds().height-10);
+	boundingBox = sf::FloatRect(body.getGlobalBounds().left, body.getGlobalBounds().top + 10, body.getGlobalBounds().width, body.getGlobalBounds().height - 10);
 }
 
 void Bird::Draw(SFGE::Window& l_window){
 	l_window.Draw(body);
-	sf::RectangleShape r(sf::Vector2f(boundingBox.width, boundingBox.height-10));
-	r.setPosition(body.getPosition().x, body.getPosition().y+10);
+	sf::RectangleShape r(sf::Vector2f(boundingBox.width, boundingBox.height - 10));
+	r.setPosition(body.getPosition().x, body.getPosition().y + 10);
 	r.setFillColor(sf::Color::Transparent);
 	r.setOutlineThickness(1);
 	r.setOutlineColor(sf::Color::Red);

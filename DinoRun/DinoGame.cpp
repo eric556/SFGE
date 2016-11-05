@@ -1,38 +1,38 @@
 #include "DinoGame.h"
 
 
-DinoGame::DinoGame(std::string l_title, sf::Vector2u windowSize) : m_window(l_title, windowSize, "DinoGame/keys.cfg"), dino(m_window)
+DinoGame::DinoGame(std::string l_title, sf::Vector2u windowSize) : m_window(l_title, windowSize, "Resources/Keys/keys.cfg"), dino(m_window)
 {
-	m_window.SetClearColor(sf::Color(247,247,247));
+	m_window.SetClearColor(sf::Color(247, 247, 247));
 
-	if (!groundTexture.loadFromFile("DinoGame/Assets/ground.png")){
+	if (!groundTexture.loadFromFile("Resources/Assets/ground.png")){
 		std::cout << "ground texture error\n";
 	}
-	if (!cloudTexture.loadFromFile("DinoGame/Assets/cloud.png")){
+	if (!cloudTexture.loadFromFile("Resources/Assets/cloud.png")){
 		std::cout << "cloud texture error\n";
 	}
-	if (!cactusTextures[0].loadFromFile("DinoGame/Assets/Cactus/cactusbig.png")){
+	if (!cactusTextures[0].loadFromFile("Resources/Assets/Cactus/cactusbig.png")){
 
 	}
-	if (!cactusTextures[1].loadFromFile("DinoGame/Assets/Cactus/cactussmall.png")){
+	if (!cactusTextures[1].loadFromFile("Resources/Assets/Cactus/cactussmall.png")){
 
 	}
-	if (!cactusTextures[2].loadFromFile("DinoGame/Assets/Cactus/cactusbigfour.png")){
+	if (!cactusTextures[2].loadFromFile("Resources/Assets/Cactus/cactusbigfour.png")){
 
 	}
-	if (!moonTexture.loadFromFile("DinoGame/Assets/moon.png")){
+	if (!moonTexture.loadFromFile("Resources/Assets/moon.png")){
 
 	}
-	if (!sunTexture.loadFromFile("DinoGame/Assets/sun.png")){
+	if (!sunTexture.loadFromFile("Resources/Assets/sun.png")){
 
 	}
-	if (!dinoTexture.loadFromFile("DinoGame/Assets/dino.png")){
+	if (!dinoTexture.loadFromFile("Resources/Assets/dino.png")){
 
 	}
-	if (!font.loadFromFile("DinoGame/Assets/PressStart2P.ttf")){
+	if (!font.loadFromFile("Resources/Assets/PressStart2P.ttf")){
 
 	}
-	if (!birdTexture.loadFromFile("DinoGame/Assets/Bird.png")){
+	if (!birdTexture.loadFromFile("Resources/Assets/Bird.png")){
 
 	}
 	InvertTextures();
@@ -60,7 +60,7 @@ DinoGame::DinoGame(std::string l_title, sf::Vector2u windowSize) : m_window(l_ti
 	scoreText.setFont(font);
 	scoreText.setString("0000");
 	scoreText.setCharacterSize(12);
-	scoreText.setColor(sf::Color(83,83,83));
+	scoreText.setColor(sf::Color(83, 83, 83));
 	gameOverText.setFont(font);
 	gameOverText.setColor(sf::Color(83, 83, 83));
 	gameOverText.setCharacterSize(24);
@@ -154,7 +154,8 @@ void DinoGame::Run(){
 void DinoGame::GroundUpdate(){
 	if (ground1.getPosition().x > -1204){
 		ground1.move(-speed * GetElapsed(), 0);
-	} else{
+	}
+	else{
 		ground1.setPosition(ground2.getPosition().x + 1204, ground1.getPosition().y);
 	}
 
@@ -204,7 +205,7 @@ void DinoGame::CactusUpdate(){
 }
 
 void DinoGame::InvertTime(){
-	
+
 	if (inverted){
 		m_window.SetClearColor(sf::Color(247, 247, 247));
 		ground1.setTexture(groundTexture);
@@ -219,7 +220,7 @@ void DinoGame::InvertTime(){
 		for (Cactus c : cactus){
 			c.body.setTexture(cactusTextures[c.indexOfSpriteSheet]);
 		}
-		scoreText.setColor(sf::Color(83,83,83));
+		scoreText.setColor(sf::Color(83, 83, 83));
 		gameOverText.setColor(sf::Color(83, 83, 83));
 		inverted = false;
 	}
@@ -361,17 +362,17 @@ void DinoGame::BirdUpdate(){
 void DinoGame::Spawner(){
 	if (spawnClock.getElapsedTime().asSeconds() > spawnTime){
 		int randomEntity = rand() % 100;
-		if (randomEntity  >= 40){
+		if (randomEntity >= 40){
 			int randomTextureIndex = rand() % 3;
 			Cactus c(cactusTextures[randomTextureIndex], randomTextureIndex);
 			cactus.push_back(c);
-			spawnTime = 2 + (rand() % (int)(3 - 2 + 1)) - (score/1000);
+			spawnTime = 2 + (rand() % (int)(3 - 2 + 1)) - (score / 1000);
 			spawnClock.restart();
 		}
 		else if (randomEntity < 40){
 			Bird b(birdTexture);
 			birds.push_back(b);
-			spawnTime = 2 + (rand() % (int)(3 - 2 + 1)) - (score/1000);
+			spawnTime = 2 + (rand() % (int)(3 - 2 + 1)) - (score / 1000);
 			spawnClock.restart();
 		}
 	}

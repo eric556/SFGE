@@ -31,35 +31,11 @@
     <Filter Include="Games">
       <UniqueIdentifier>{8796ae39-1738-43a3-bd37-b707373e28c0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Games\DinoRun">
-      <UniqueIdentifier>{a45c40eb-2a22-44b5-b2ae-82410bce5ee2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Games\DinoRun\Entities">
-      <UniqueIdentifier>{690f2580-cd7a-4f14-bd92-e71c4259153b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Games\DinoRun\Entities\Bird">
-      <UniqueIdentifier>{2f3344b9-37cc-4ebb-9463-b393546c4cb4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Games\DinoRun\Entities\Cactus">
-      <UniqueIdentifier>{deb79bb2-6ac9-4246-97be-49fbdb2e95a3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Games\DinoRun\Entities\Dino">
-      <UniqueIdentifier>{97c23b26-f5c9-4e89-b6d4-a534cce6fa60}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Games\Pong">
-      <UniqueIdentifier>{6fccfad4-c72a-4674-acd9-ec461515737b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Games\Physics Test">
-      <UniqueIdentifier>{f8d6feef-724a-4bc4-9b19-0d7b6ea5e28f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Games\Physics Test\Entities">
-      <UniqueIdentifier>{fd980d4e-852b-4224-ad15-ff1139f4b722}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Games\Physics Test\Physics">
-      <UniqueIdentifier>{79ce9a81-29de-45bf-9bdd-0b8b5a38fa9a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Core_Required\Math">
       <UniqueIdentifier>{935d1bab-16e8-45d8-bd52-0f6211d2f4d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Pong">
+      <UniqueIdentifier>{97ef2247-e736-4b91-905e-c69ee0367591}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -75,32 +51,11 @@
     <ClCompile Include="StateManager.cpp">
       <Filter>Source Files\Core_Required\State Machine</Filter>
     </ClCompile>
-    <ClCompile Include="Bird.cpp">
-      <Filter>Games\DinoRun\Entities\Bird</Filter>
-    </ClCompile>
-    <ClCompile Include="Cactus.cpp">
-      <Filter>Games\DinoRun\Entities\Cactus</Filter>
-    </ClCompile>
-    <ClCompile Include="Dino.cpp">
-      <Filter>Games\DinoRun\Entities\Dino</Filter>
-    </ClCompile>
-    <ClCompile Include="DinoGame.cpp">
-      <Filter>Games\DinoRun</Filter>
-    </ClCompile>
-    <ClCompile Include="TestGame.cpp">
-      <Filter>Games\Pong</Filter>
-    </ClCompile>
-    <ClCompile Include="PTestGame.cpp">
-      <Filter>Games\Physics Test</Filter>
-    </ClCompile>
-    <ClCompile Include="RigidBody.cpp">
-      <Filter>Games\Physics Test\Physics</Filter>
-    </ClCompile>
     <ClCompile Include="VectorMath.cpp">
       <Filter>Source Files\Core_Required\Math</Filter>
     </ClCompile>
-    <ClCompile Include="Polygon.cpp">
-      <Filter>Games\Physics Test\Physics</Filter>
+    <ClCompile Include="TestGame.cpp">
+      <Filter>Games\Pong</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -119,39 +74,15 @@
     <ClInclude Include="StateManager.h">
       <Filter>Source Files\Core_Required\State Machine</Filter>
     </ClInclude>
-    <ClInclude Include="Bird.h">
-      <Filter>Games\DinoRun\Entities\Bird</Filter>
-    </ClInclude>
-    <ClInclude Include="Cactus.h">
-      <Filter>Games\DinoRun\Entities\Cactus</Filter>
-    </ClInclude>
-    <ClInclude Include="Dino.h">
-      <Filter>Games\DinoRun\Entities\Dino</Filter>
-    </ClInclude>
-    <ClInclude Include="DinoGame.h">
-      <Filter>Games\DinoRun</Filter>
+    <ClInclude Include="VectorMath.h">
+      <Filter>Source Files\Core_Required\Math</Filter>
     </ClInclude>
     <ClInclude Include="TestGame.h">
       <Filter>Games\Pong</Filter>
     </ClInclude>
-    <ClInclude Include="PTestGame.h">
-      <Filter>Games\Physics Test</Filter>
-    </ClInclude>
-    <ClInclude Include="RigidBody.h">
-      <Filter>Games\Physics Test\Physics</Filter>
-    </ClInclude>
-    <ClInclude Include="VectorMath.h">
-      <Filter>Source Files\Core_Required\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Polygon.h">
-      <Filter>Games\Physics Test\Physics</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="keys.cfg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="DinoGame\keys.cfg">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
