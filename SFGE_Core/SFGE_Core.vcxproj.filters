@@ -28,14 +28,8 @@
     <Filter Include="Source Files\Core_Required\State Machine">
       <UniqueIdentifier>{61f5dd6a-9755-4b8e-b6ed-2ac95ffb43de}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Games">
-      <UniqueIdentifier>{8796ae39-1738-43a3-bd37-b707373e28c0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Core_Required\Math">
       <UniqueIdentifier>{935d1bab-16e8-45d8-bd52-0f6211d2f4d1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Games\Pong">
-      <UniqueIdentifier>{97ef2247-e736-4b91-905e-c69ee0367591}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -53,9 +47,6 @@
     </ClCompile>
     <ClCompile Include="VectorMath.cpp">
       <Filter>Source Files\Core_Required\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="TestGame.cpp">
-      <Filter>Games\Pong</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -77,13 +68,5 @@
     <ClInclude Include="VectorMath.h">
       <Filter>Source Files\Core_Required\Math</Filter>
     </ClInclude>
-    <ClInclude Include="TestGame.h">
-      <Filter>Games\Pong</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="keys.cfg">
-      <Filter>Resource Files</Filter>
-    </None>
   </ItemGroup>
 </Project>

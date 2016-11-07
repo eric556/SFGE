@@ -69,7 +69,8 @@ namespace SFGE{
 				return this->x * other.x + this->y * other.y;
 			}
 			Vector2f Vector2f::normalize(){
-				return *this / this->magnitude();
+				*this /= this->magnitude();
+				return *this;
 			}
 			Vector2f& Vector2f::truncate(float max){
 				if (this->magnitude() > max){
