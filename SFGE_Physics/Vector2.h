@@ -25,6 +25,11 @@ namespace SFGE{
 				template<typename U>
 				inline Vector2(const Vector2<U>& vector) : x(static_cast<T>(vector.x)), y(static_cast<T>(vector.y)){}
 
+
+				T& operator[](int i){
+					return ((i > 0) ? y : x);
+				}
+
 				/*! Takes the dot product of this vector and another vector.
 					\param other another vector.
 					\return a number of the same type as the vector.

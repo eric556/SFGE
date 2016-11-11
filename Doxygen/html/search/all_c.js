@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['to_5fstr',['to_str',['../class_s_f_g_e_1_1_physics_1_1_math_1_1_vector2.html#a307b6323613efa005b1b9ce31b33b603',1,'SFGE::Physics::Math::Vector2']]],
-  ['togglefullscreen',['ToggleFullscreen',['../class_s_f_g_e_1_1_window.html#aa38669a50d91d0fbdbc2be43abf0771e',1,'SFGE::Window']]],
-  ['truncate',['truncate',['../class_s_f_g_e_1_1_physics_1_1_math_1_1_vector2.html#af81c21fe33d804e98d0b8eedd87c60af',1,'SFGE::Physics::Math::Vector2']]]
+  ['setclearcolor',['SetClearColor',['../class_s_f_g_e_1_1_window.html#a5f3529ddb90bdc650e5c50429c8bdd28',1,'SFGE::Window']]],
+  ['setdone',['SetDone',['../class_s_f_g_e_1_1_window.html#a801b0a9479134e913846e3cd7de35bee',1,'SFGE::Window']]],
+  ['setvalue',['SetValue',['../class_s_f_g_e_1_1_physics_1_1_math_1_1_matrix.html#ae6e6b28f3426e3d1148765a4bde90b74',1,'SFGE::Physics::Math::Matrix::SetValue(int m, int n, T value)'],['../class_s_f_g_e_1_1_physics_1_1_math_1_1_matrix.html#ae56c4104cebbf96a6d5879b60aad8dc4',1,'SFGE::Physics::Math::Matrix::SetValue(std::vector&lt; std::vector&lt; T &gt;&gt; vec)']]],
+  ['sharedcontext',['SharedContext',['../struct_s_f_g_e_1_1_shared_context.html',1,'SFGE']]],
+  ['statemanager',['StateManager',['../class_s_f_g_e_1_1_state_manager.html',1,'SFGE']]]
 ];

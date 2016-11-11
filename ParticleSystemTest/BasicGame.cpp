@@ -1,9 +1,9 @@
 #include "BasicGame.h"
 
 void BasicGame::InitializeParticalSim(){
-	particleColor = sf::Color(254, 254, 254, 255);
 
 	for (int i = 0; i < 1630; i++){
+		particleColor = sf::Color(255, 0, 0, 255);
 		sf::CircleShape shape(1);
 		Particle p;
 		p.Initialize();
@@ -26,8 +26,7 @@ void BasicGame::InitializeParticalSim(){
 }
 
 void BasicGame::RunParticalSim(float deltaTime){
-	particleColor.r -= 3;
-	
+	SFGE::Math::vector2::Vector2f average(0, 0);
 	for (int i = 0; i < particles.size(); i++){
 		Particle *particle = &particles[i];
 		SFGE::Math::vector2::Vector2f force(0, 0);
@@ -36,11 +35,14 @@ void BasicGame::RunParticalSim(float deltaTime){
 			if (particle != other){
 				force += particle->ComputeGravitationalAttractions(other);
 			}
+			
 		}
 		particle->IntegrateForce(force, deltaTime);
 		particleShapes[i].setPosition(particle->position.x, particle->position.y);
-		particleShapes[i].setFillColor(particleColor);
+		average += particle->position;
 	}
+	average /= particles.size();
+	particleShapes[particleShapes.size() - 1];
 }
 
 void BasicGame::DrawParticlSim(){

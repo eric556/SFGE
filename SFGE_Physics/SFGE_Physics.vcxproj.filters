@@ -16,6 +16,9 @@
     <Filter Include="Source Files\Math">
       <UniqueIdentifier>{61852bae-0e20-4ab6-8d5e-45bba5a49f8e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Bounding Volumes">
+      <UniqueIdentifier>{75897449-908e-412a-a5cb-63a0e62037b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -27,6 +30,9 @@
       <Filter>Source Files\Math</Filter>
     </ClInclude>
     <ClInclude Include="Matrix.h">
+      <Filter>Source Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
       <Filter>Source Files\Math</Filter>
     </ClInclude>
   </ItemGroup>
