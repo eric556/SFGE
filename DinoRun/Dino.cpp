@@ -105,6 +105,7 @@ void Dino::SetTexture(sf::Texture& l_texture){
 }
 
 void Dino::Jump(SFGE::EventDetails* details){
+	//std::cout << details->m_keyCode << "\n";
 	if (body.getPosition().y >= 164){
 		vel.y = -500;
 	}

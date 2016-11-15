@@ -338,6 +338,7 @@ void DinoGame::InvertTextures(){
 }
 
 void DinoGame::Retry(SFGE::EventDetails* l_details){
+	std::cout << l_details->m_keyCode;
 	keepPlaying = true;
 }
 

@@ -35,7 +35,7 @@ namespace SFGE{
 				if (e_itr.first != sfmlEvent){ continue; }
 				if (sfmlEvent == EventType::KeyDown || sfmlEvent == EventType::KeyUp){
 					if (e_itr.second.m_code == l_event.key.code){
-						if (bind->m_details.m_keyCode != -1){
+						if (bind->m_details.m_keyCode == -1){
 							bind->m_details.m_keyCode = e_itr.second.m_code;
 						}
 						++(bind->c);
@@ -46,7 +46,7 @@ namespace SFGE{
 					if (e_itr.second.m_code == l_event.mouseButton.button){
 						bind->m_details.m_mouse.x = l_event.mouseButton.x;
 						bind->m_details.m_mouse.y = l_event.mouseButton.y;
-						if (bind->m_details.m_keyCode != -1){
+						if (bind->m_details.m_keyCode == -1){
 							bind->m_details.m_keyCode = e_itr.second.m_code;
 						}
 						++(bind->c);
@@ -136,6 +136,7 @@ namespace SFGE{
 				}
 				EventType type = EventType(stoi(keyval.substr(start,end - start)));
 				int code = stoi(keyval.substr(end + delimiter.length(), keyval.find(delimiter, end + delimiter.length())));
+				std::cout << code << "\n";
 				EventInfo eventInfo;
 				eventInfo.m_code = code;
 				bind->BindEvent(type, eventInfo);

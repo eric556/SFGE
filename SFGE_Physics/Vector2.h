@@ -10,7 +10,7 @@ namespace SFGE{
 			class Vector2{
 			public:
 
-				/*! Constructs the vector with 0 for x and y as ints.*/
+				/*! Constructs the vector with 0 for x and y.*/
 				inline Vector2() :x(0), y(0){}
 
 				/*! Constructor taking in 2 types (Preferably numbers) and setting them to x and y.
@@ -119,7 +119,7 @@ namespace SFGE{
 
 				/*! Adds two vectors together.
 					\param right vector to add.
-					\return Vector2<T> that is the sum of the two vectors.
+					\return vector that is the sum of the two vectors.
 				*/
 				inline Vector2<T> operator+( const Vector2<T>& right){
 					return Vector2(this->x + right.x, this->y + right.y);
@@ -127,7 +127,7 @@ namespace SFGE{
 
 				/*! Subtract two vectors.
 					\param right vector to subtract.
-					\return Vector2<T> that is the difference of the two vectors.
+					\return vector that is the difference of the two vectors.
 				*/
 				inline Vector2<T> operator-( const Vector2<T>& right){
 					return Vector2(this->x - right.x, this->y - right.y);
@@ -135,7 +135,7 @@ namespace SFGE{
 
 				/*! Subtract two vectors.
 					\param right scaler to multiply by. 
-					\return Vector2<T> scaled up by T right.
+					\return vector scaled up by T right.
 				*/
 				inline Vector2<T> operator*( T right){
 					return Vector2(this->x * right, this->y * right);

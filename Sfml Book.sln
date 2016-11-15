@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sfml Book", "Sfml Book\Sfml Book.vcxproj", "{B656463E-29DE-4491-B0B6-94C95B0D9F59}"
 EndProject
@@ -16,6 +16,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ParticleSystemTest", "ParticleSystemTest\ParticleSystemTest.vcxproj", "{E76F563A-5255-468B-9D0C-131B818D7D94}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SFGE_Physics", "SFGE_Physics\SFGE_Physics.vcxproj", "{351C16CE-279B-447E-95F7-70B30044EDD9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3DOpenGL-Test", "3DOpenGL-Test\3DOpenGL-Test.vcxproj", "{90BA634E-510D-4FB0-9B53-3A8040CABBA2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Balistics", "Balistics\Balistics.vcxproj", "{EEAFD54C-C19D-47C9-8121-6CAF9206E416}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{351C16CE-279B-447E-95F7-70B30044EDD9}.Debug|Win32.Build.0 = Debug|Win32
 		{351C16CE-279B-447E-95F7-70B30044EDD9}.Release|Win32.ActiveCfg = Release|Win32
 		{351C16CE-279B-447E-95F7-70B30044EDD9}.Release|Win32.Build.0 = Release|Win32
+		{90BA634E-510D-4FB0-9B53-3A8040CABBA2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{90BA634E-510D-4FB0-9B53-3A8040CABBA2}.Debug|Win32.Build.0 = Debug|Win32
+		{90BA634E-510D-4FB0-9B53-3A8040CABBA2}.Release|Win32.ActiveCfg = Release|Win32
+		{90BA634E-510D-4FB0-9B53-3A8040CABBA2}.Release|Win32.Build.0 = Release|Win32
+		{EEAFD54C-C19D-47C9-8121-6CAF9206E416}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EEAFD54C-C19D-47C9-8121-6CAF9206E416}.Debug|Win32.Build.0 = Debug|Win32
+		{EEAFD54C-C19D-47C9-8121-6CAF9206E416}.Release|Win32.ActiveCfg = Release|Win32
+		{EEAFD54C-C19D-47C9-8121-6CAF9206E416}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
