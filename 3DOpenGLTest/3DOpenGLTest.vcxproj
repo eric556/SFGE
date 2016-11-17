@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{EEAFD54C-C19D-47C9-8121-6CAF9206E416}</ProjectGuid>
-    <RootNamespace>Balistics</RootNamespace>
+    <ProjectGuid>{BEDF57CD-A965-4FA0-A7CC-D3B0670EAF22}</ProjectGuid>
+    <RootNamespace>_3DOpenGLTest</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -66,15 +66,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\SFML\include;$(SolutionDir)SFGE_Core;$(SolutionDir)SFGE_Physics;$(SolutionDir)Balistics\GL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\SFML\include;$(SolutionDir)SFGE_Core;C:\Users\enpie\Documents\Visual Studio 2013\Projects\Sfml Book\Balistics\GL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>C:\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-audio.lib;sfml-graphics.lib;sfml-network.lib;sfml-system.lib;sfml-window.lib;%(AdditionalDependencies);$(SolutionDir)Release\SFGE_Core.lib;$(SolutionDir)Release\SFGE_Physics.lib;$(SolutionDir)Balistics\glut32.lib;$(SolutionDir)Balistics\glut.lib</AdditionalDependencies>
+      <AdditionalDependencies>sfml-audio.lib;sfml-graphics.lib;sfml-network.lib;sfml-system.lib;sfml-window.lib;%(AdditionalDependencies);$(SolutionDir)Release\SFGE_Core.lib;$(SolutionDir)Balistics\glut.lib;$(SolutionDir)Balistics\glut32.lib</AdditionalDependencies>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
