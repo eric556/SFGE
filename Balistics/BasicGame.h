@@ -162,7 +162,7 @@ public:
 			glNewList(model, GL_COMPILE);
 			{
 				glPushMatrix();
-				glBegin(GL_POINTS);
+				glBegin(GL_TRIANGLES);
 				
 				for (unsigned int i = 0; i < vertexIndicies.size(); i++){
 					unsigned int vertexIndex = vertexIndicies[i];
@@ -202,7 +202,7 @@ public:
 
 		void Render2(){
 			glPushMatrix();
-			glTranslatef(-2.0f, 0.0f, 0.0f);
+			glTranslatef(10.0f, 0.0f, 0.0f);
 			glScalef(0.05, 0.05, 0.05);
 			glRotatef(rot, 0, 1, 0);
 			glCallList(model);

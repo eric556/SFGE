@@ -82,6 +82,21 @@ namespace SFGE{
 				void ClearAccum(){
 					forceAccum.clear();
 				}
+
+				bool hasFiniteMass(){
+					if (this->inverseMass > 0){
+						return true;
+					}
+					return false;
+				}
+
+				void addForce(Math::Vector3f force){
+					this->forceAccum += force;
+				}
+
+				float getMass(){
+					return 1 / this->inverseMass;
+				}
 			private:
 				/*! Updates the position based on velocity
 					\param dt time since last update

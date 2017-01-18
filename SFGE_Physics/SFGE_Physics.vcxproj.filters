@@ -19,10 +19,22 @@
     <Filter Include="Source Files\Components">
       <UniqueIdentifier>{8c4a5d19-c0a1-4085-867f-b3d8d204c6a5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Generators">
+      <UniqueIdentifier>{753d8655-7ee2-4e85-91a3-b0858bfe8119}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Generators\Force Generator">
+      <UniqueIdentifier>{5ff8fbae-e2ee-456f-835a-e41120506e9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Generators\Force Registry">
+      <UniqueIdentifier>{29240641-0f02-40fd-a4d4-462958cc312e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleForceRegistry.cpp">
+      <Filter>Source Files\Generators\Force Registry</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +49,18 @@
     </ClInclude>
     <ClInclude Include="Particle.h">
       <Filter>Source Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleForceGenerator.h">
+      <Filter>Source Files\Generators\Force Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleForceRegistry.h">
+      <Filter>Source Files\Generators\Force Registry</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleGravity.h">
+      <Filter>Source Files\Generators\Force Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleDrag.h">
+      <Filter>Source Files\Generators\Force Generator</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

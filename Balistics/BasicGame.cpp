@@ -34,7 +34,7 @@ BasicGame::BasicGame(std::string title, sf::Vector2u windowSize):m_window(title,
 	std::vector<SFGE::Physics::Math::Vector3f> vertices;
 	std::vector<SFGE::Physics::Math::Vector2f> uvs;
 	std::vector<SFGE::Physics::Math::Vector3f> normals;
-	bool res = car.LoadObject2("Resources/IronMan6.obj", vertices,uvs,normals);
+	bool res = car.LoadObject2("Resources/untitled.obj", vertices,uvs,normals);
 	camera_angle_h = 0;
 	camera_angle_v = 0;
 camera_forward = 0;
