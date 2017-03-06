@@ -91,10 +91,10 @@ void BasicGame::fire(){
 		break;
 
 	case ARTILLERY:
-		shot->particle.SetMass(200.0f); // 200.0kg
-		shot->particle.SetVelocity(0.0f, 30.0f, 40.0f); // 50m/s
-		shot->particle.SetAcceleration(0.0f, -20.0f, 0.0f);
-		shot->particle.SetDampning(0.99f);
+		shot->particle.SetMass(0.673); // 200.0kg
+		shot->particle.SetVelocity(0.0f, 27.3, 27.3); // 50m/s
+		shot->particle.SetAcceleration(0.0f, -98.0f, 0.0f);
+		shot->particle.SetDampning(1);
 		break;
 
 	case FIREBALL:
@@ -115,7 +115,7 @@ void BasicGame::fire(){
 	}
 
 	// Set the data common to all particle types
-	shot->particle.SetPosition(0.0f, 1.5f, 0.0f);
+	shot->particle.SetPosition(0.0f, 0.264f, 0.0f);
 	shot->startTime = GetElapsed();
 	shot->type = currentShotType;
 
@@ -169,15 +169,17 @@ void BasicGame::Render(){
 	GLfloat sphereColor[] = { 0.8f, 0.15f, 0.15f, 1.0f };
 	glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, sphereColor);
 	glPushMatrix();
+	glTranslatef(0.0, 3.1, 12.5);
+	glutSolidSphere(0.1, 5, 5);
 	glTranslatef(0.0f, 1.5f, 0.0f);
-	glutSolidSphere(0.1f, 5, 5);
+	glutSolidSphere(0.01f, 5, 5);
 	glTranslatef(0.0f, -1.5f, 0.0f);
 	GLfloat sphereShadowColor[] = { 0.17, 0.15, 0.15, 1.0 };
 	glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, sphereShadowColor);
 	GLfloat sphereShadowEmission[] = { -1.f, -1.f, -1.f, 1.f };
 	glMaterialfv(GL_FRONT, GL_EMISSION, sphereShadowEmission);
 	glScalef(1.0f, 0.1f, 1.0f);
-	glutSolidSphere(0.1f, 5, 5);
+	glutSolidSphere(0.01f, 5, 5);
 	glPopMatrix();
 	GLfloat defaultEmission[] = { 0.f, 0.f, 0.f, 1 };
 	glMaterialfv(GL_FRONT, GL_EMISSION, defaultEmission);
@@ -227,7 +229,7 @@ void BasicGame::Render(){
 	//car.Render();
 	//glMaterialfv(GL_FRONT, GL_SPECULAR, sphereColor);
 	glRotatef(-90, 0, 1, 0);
-	car.Render2();
+	//car.Render2();
 	m_window.EndDraw();
 }
 
@@ -244,6 +246,6 @@ void BasicGame::Run(){
 		}
 		this->Render();
 		this->RestartClock();
-		
+		c++;
 	}
 }

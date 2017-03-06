@@ -55,7 +55,7 @@ public:
 			glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, sphereColor);
 			glPushMatrix();
 			glTranslatef(position->x, position->y, position->z);
-			glutSolidSphere(0.3f, 5, 10);
+			glutSolidSphere(0.1f, 5, 10);
 			glPopMatrix();
 
 			//creating some shadows 
@@ -67,7 +67,7 @@ public:
 			glPushMatrix();
 			glTranslatef(position->x, 0, position->z);
 			glScalef(1.0f, 0.1f, 1.0f);
-			glutSolidSphere(0.6f, 5, 4);
+			glutSolidSphere(0.1f, 5, 4);
 			glPopMatrix();
 			GLfloat defaultEmission[] = { 0.f, 0.f, 0.f, 1 };
 			glMaterialfv(GL_FRONT, GL_EMISSION, defaultEmission);
