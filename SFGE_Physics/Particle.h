@@ -7,6 +7,33 @@ namespace SFGE{
 			*/
 			class Particle{
 			public:
+
+				/*! Creates a new Particle with the given values for position, velocity, mass, and optionaly dampening
+					\param position of the particle
+					\param velocity of particle
+					\param mass of the particle
+					\param dampening of the particle (Set to 0.99f by default)
+				*/
+				Particle(SFGE::Physics::Math::Vector3f position, SFGE::Physics::Math::Vector3f velocity, float mass, float dampening = 0.99f){
+					(mass <= 0) ? this->SetInverseMass(0) : this->SetMass(mass);
+					this->SetPosition(position);
+					this->SetVelocity(velocity);
+					this->SetDampning(dampening);
+				}
+
+				/*! Creates a new Particle with the given values for position, velocity, mass, and optionaly dampening
+					\param x x position of the particle
+					\param y y position of the particle
+					\param z z position of the particle
+					\param vx x component of velocity
+					\param vy y component of velocity
+					\param vz z component of velocity
+					\param mass of the particle
+					\param dampening of the particle (Set to 0.99f by default)
+				*/
+				Particle(float x, float y, float z, float vx, float vy, float vz, float mass, float dampening = 0.99f) : 
+					Particle(SFGE::Physics::Math::Vector3f(x, y, z), SFGE::Physics::Math::Vector3f(vx, vy, vz), mass, dampening){}
+
 				/*! Sets the mass of the Particle. Only use with none 0 mass
 					\param mass mass to set
 				*/

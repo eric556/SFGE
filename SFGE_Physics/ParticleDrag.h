@@ -19,12 +19,13 @@ namespace SFGE{
 					Math::Vector3f force = Math::Vector3f(p->GetVelocity()->x, p->GetVelocity()->y, p->GetVelocity()->z);
 
 					float dragCoeff = force.magnitude();
+					dragCoeff = k1 * dragCoeff + k2 * dragCoeff * dragCoeff;
 
-
+					force.normalize();
+					force *= -dragCoeff;
+					p->addForce(force);
 				}
-
 			};
-
 		}
 	}
 }
