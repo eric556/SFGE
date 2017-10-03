@@ -16,7 +16,7 @@ namespace SFGE{
 				}
 
 				virtual void updateForce(Components::Particle* p, float duration){
-					Math::Vector3f force = Math::Vector3f(p->GetVelocity()->x, p->GetVelocity()->y, p->GetVelocity()->z);
+					Math::Vector3f force(p->GetVelocity()->x, p->GetVelocity()->y, p->GetVelocity()->z);
 
 					float dragCoeff = force.magnitude();
 					dragCoeff = k1 * dragCoeff + k2 * dragCoeff * dragCoeff;

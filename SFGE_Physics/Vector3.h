@@ -217,7 +217,7 @@ namespace SFGE{
 				}
 
 				inline Vector3<T>& operator/=(T right){
-					*this = this / right;
+					*this = *this / right;
 					return *this;
 				}
 
