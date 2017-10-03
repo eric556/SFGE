@@ -1,3 +1,4 @@
+#pragma once
 #include "Vector3.h"
 #include <assert.h>
 namespace SFGE{
@@ -61,6 +62,10 @@ namespace SFGE{
 					return &velocity;
 				}
 
+				void GetVelocity(Math::Vector3f& velocity){
+					velocity = this->velocity;
+				}
+
 				void SetAcceleration(float x, float y, float z){
 					acceleration.x = x;
 					acceleration.y = y;
@@ -75,6 +80,10 @@ namespace SFGE{
 					return &acceleration;
 				}
 
+				void GetAcceleration(Math::Vector3f& acceleration){
+					acceleration = this->acceleration;
+				}
+
 				void SetPosition(float x, float y, float z){
 					position.x = x;
 					position.y = y;
@@ -85,8 +94,12 @@ namespace SFGE{
 					position = vec;
 				}
 
-				Math::Vector3f* GetPosition(){
-					return &position;
+				Math::Vector3f GetPosition(){
+					return position;
+				}
+
+				void GetPosition(Math::Vector3f& position){
+					position = this->position;
 				}
 
 				void SetDampning(float d){
