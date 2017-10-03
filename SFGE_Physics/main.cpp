@@ -22,7 +22,7 @@ int main()
 	SFGE::Physics::Generators::ParticleUniversalGravity grav(particles);
 	//forceRegistry.add(&p, &gravity);
 	//forceRegistry.add(&p, &drag);
-
+  
 	sf::Clock deltaClock;
 	sf::CircleShape shape(10.0f);
 	shape.setPosition(p.GetPosition().x, p.GetPosition().y);
@@ -45,6 +45,7 @@ int main()
 		p.Integrate(dt.asSeconds());
 		shape.setPosition(p.GetPosition().x, p.GetPosition().y);
 		//std::cout << p.GetPosition()->to_str() << "\n";
+
 		window.clear();
 		window.draw(shape);
 		window.display();
