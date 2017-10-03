@@ -62,5 +62,14 @@
     <ClInclude Include="ParticleDrag.h">
       <Filter>Source Files\Generators\Force Generator</Filter>
     </ClInclude>
+    <ClInclude Include="ParticleSpring.h">
+      <Filter>Source Files\Generators\Force Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleAnchoredSpring.h">
+      <Filter>Source Files\Generators\Force Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleUniversalGravity.h">
+      <Filter>Source Files\Generators\Force Generator</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

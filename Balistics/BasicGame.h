@@ -47,7 +47,7 @@ public:
 
 		void render(){
 			SFGE::Physics::Math::Vector3f* position;
-			position = particle.GetPosition();
+			position = &particle.GetPosition();
 
 			//creating the actual sphere
 			glColor3f(0.8, 0.15, 0.15);

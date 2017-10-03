@@ -5,7 +5,6 @@
 namespace SFGE{
 	namespace Physics{
 		namespace Generators{
-
 			class ParticleGravity : public ParticleForceGenerator{
 				Math::Vector3f gravity;
 			public:
@@ -17,9 +16,7 @@ namespace SFGE{
 					if (!p->hasFiniteMass()) return;
 					p->addForce(this->gravity * p->getMass());
 				}
-
 			};
-
 		}
 	}
 }
